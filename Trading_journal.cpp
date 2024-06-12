@@ -92,7 +92,7 @@ void DisplayMainMenu() {
     cout << "3. Delete a Journal" << endl;
     cout << "4. Display all Journals" << endl;
     cout << "5. Change Password" << endl;
-    cout << "6. Exit" << endl;
+    cout << "0. Exit" << endl;
 }
 
 void AddNewJournal() {
@@ -370,7 +370,7 @@ int main() {
                 case 5:
                     ChangePassword(key);
                     break;
-                case 6:
+                case 0:
                     while (1) {
                         cout << "Are you sure you want to exit ?(y/n): ";
                         cin >> option;
