@@ -1,8 +1,13 @@
-The Trading Journal is a C++ console application designed to manage and secure journal entries related to trading activities. It offers functionalities for adding, viewing, editing, deleting journal entries, and changing passwords for secure access.
+
+#  TradeTrack Journal - A Trading Journal Software
+
+Overview
+
+TradeTrack is a C++ console application designed to manage and secure journal entries related to trading activities. It offers functionalities for adding, viewing, editing, deleting journal entries, and changing passwords for secure access.
 
 Features
 
-  •	Password Protection: Secure login with encrypted password storage.
+	•	Password Protection: Secure login with encrypted password storage.
 	•	Journal Management:
 	•	Add new journal entries.
 	•	View and edit existing entries.
@@ -10,28 +15,46 @@ Features
 	•	Display all journal entries.
 	•	Password Management: Change the password securely.
 
- Installation
 
-  1.	Clone the repository:
-     git clone https://github.com/your-username/TradingJournal.git
+# Fuctions
 
-  2.	Navigate to the project directory:
-     cd TradingJournal
+•	CheckPassword: Verifies the entered password against the stored password.
+•	SetNewPassword: Prompts and sets a new password.
+•	isValidDate: Validates the date format (DD-MM-YYYY).
+•	AddNewJournal: Adds a new journal entry.
+•	ViewEditOldJournal: Views or edits an existing journal entry.
+•	DeleteJournal: Deletes a journal entry.
+•	DisplayAllJournals: Displays all journal entries.
+•	ChangePassword: Changes the existing password.
 
-  3.  Compile the source code:
-     g++ main.cpp -o TradingJournal
+# Installation
 
-  Usage
+Open the terminal and follow the steps :-
 
-  1.   Run the application:
-       ./TradingJournal
+1. Clone the repository:
+git Clone https://github.com/your-username/TradingJournal.git
 
-  2.  Follow the prompts to set a password if not already set, and log in.
+2. Navigate to the project directory:
+cd TradingJournal
 
-  Contributing
+3. Compile the source code:
+g++ main.cpp -o TradingJournal
 
-  Contributions are welcome! Please submit issues or fork the repository and create pull requests.
 
-  License
+# Usage
 
-  This project is licensed under the MIT License.
+1. Run the application: 
+./TradingJournal 
+
+2.	Follow the prompts to set a password if not already set, and log in.
+
+
+#Contributing
+
+Contributions are always welcome! Fork the repository and create pull requests.
+
+
+# License
+
+This project is licensed under the MIT License.
+
