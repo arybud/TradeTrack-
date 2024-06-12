@@ -7,25 +7,25 @@ TradeTrack Journal is a C++ console application crafted to create and manage tra
 
 ## Features:
 
-	•	Password Protection: Secure login with encrypted password storage.
-	•	Journal Management:
-	     • Add new journal entries.
-	     • View and edit existing entries.
-	     • Delete specific entries.
-	     • Display all journal entries.
-	•	Password Management: Change the password securely.
+	• Password Protection: Secure login with encrypted password storage.
+	• Journal Management:
+	    • Add new journal entries.
+	    • View and edit existing entries.
+	    • Delete specific entries.
+	    • Display all journal entries.
+	• Password Management: Change the password securely.
 
 
 ## Fuctions
 
-    •	CheckPassword: Verifies the entered password against the stored password.
-    •	SetNewPassword: Prompts and sets a new password.
-    •	isValidDate: Validates the date format (DD-MM-YYYY).
-    •	AddNewJournal: Adds a new journal entry.
-    •	ViewEditOldJournal: Views or edits an existing journal entry.
-    •	DeleteJournal: Deletes a journal entry.
-    •	DisplayAllJournals: Displays all journal entries.
-    •	ChangePassword: Changes the existing password.
+    • CheckPassword: Verifies the entered password against the stored password.
+    • SetNewPassword: Prompts and sets a new password.
+    • isValidDate: Validates the date format (DD-MM-YYYY).
+    • AddNewJournal: Adds a new journal entry.
+    • ViewEditOldJournal: Views or edits an existing journal entry.
+    • DeleteJournal: Deletes a journal entry.
+    • DisplayAllJournals: Displays all journal entries.
+    • ChangePassword: Changes the existing password.
 
 ## Installation
 
@@ -45,9 +45,9 @@ g++ main.cpp -o TradeTrack_Journal
 
 1. Run the application in Bash:
 
-./TradeTrack_Journal
+    ./TradeTrack_Journal
 
-Follow the prompts to set a password if not already set, and log in.
+2. Follow the prompts to set a password if not already set, and log in.
 ## Contributing
 
 Contributions are always welcome! Please submit issues or fork the repository and create pull requests.
