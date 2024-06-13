@@ -141,16 +141,16 @@ void ViewEditOldJournal() {
     string line;
     bool found = false;
 
+    while(true){
     cout << "Enter the date of the journal you want to view/edit (DD-MM-YYYY): ";
     cin >> date;
     cin.ignore();
-
+     
     if (!isValidDate(date)) {
-        cout << "Invalid date format." << endl;
-        cout<<"Press enter key to return to Main menu.";
-    getchar();
-    cout<<endl;
-        return;
+    cout << "Invalid date format. Please try again." << endl;
+    } else {
+      break;
+     }
     }
 
     ifstream inputFile("Journals.txt");
