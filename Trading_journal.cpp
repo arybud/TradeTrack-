@@ -100,16 +100,16 @@ void AddNewJournal() {
     string journal;
     string line;
 
-    cout << "Enter the date (DD-MM-YYYY): ";
-    cin >> date;
-    cin.ignore();
+    while (true) {
+        cout << "Enter the date (DD-MM-YYYY): ";
+        cin >> date;
+        cin.ignore();
 
-    if (!isValidDate(date)) {
-        cout << "Invalid date format." << endl;
-        cout<<"Press enter key to return to Main menu.";
-    getchar();
-    cout<<endl;
-        return;
+        if (!isValidDate(date)) {
+            cout << "Invalid date format. Please try again." << endl;
+        } else {
+            break;
+        }
     }
 
     cout << "Enter your journal (Type 'Finished Writing' in a new line to finish):" << endl;
