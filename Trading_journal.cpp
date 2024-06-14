@@ -6,12 +6,41 @@
 #include <cstdio>
 
 using namespace std;
+
 string EncryptDecrypt(const string& str, const string& key) {
     string result = str;
-    for (size_t i = 0; i < str.size(); ++i) {
-        result[i] ^= key[i % key.size()];
+    for (int i = 0; i < str.length(); i++) {
+        result[i] = str[i] ^ key[i % key.length()]; 
+    }
+    if (str.length() % key.length() != 0) {
+        result[str.length() - 1] = result[str.length() - 1] ^ key[key.length() - 1];
     }
     return result;
+}
+
+void SetNewPassword(const string& key) {
+    string newpassword, confirmPassword;
+    cout << "No password found. Set a new password: ";
+    getline(cin, newpassword);
+    cout << "Confirm the new password: ";
+    getline(cin, confirmPassword);
+
+    if (newpassword == confirmPassword) {
+        string encryptedPassword = EncryptDecrypt(newpassword, key);
+        ofstream passwordfile("password.txt");
+        if (passwordfile.is_open()) {
+            passwordfile << encryptedPassword;
+            passwordfile.close();
+            cout << "Password set successfully" << endl;
+        } else {
+            cerr << "Error: Failed to open password file for writing" << endl;
+            exit(1);
+        }
+    } 
+    else {
+        cerr << "Passwords do not match. Please restart the program and try again." << endl;
+        exit(1);
+    }
 }
 
 bool CheckPassword(const string& password, const string& key) {
@@ -26,31 +55,6 @@ bool CheckPassword(const string& password, const string& key) {
 
     string decryptedPassword = EncryptDecrypt(storedPassword, key);
     return (password == decryptedPassword);
-}
-
-
-void SetNewPassword(const string& key) {
-    string newpassword, confirmPassword;
-    cout << "No password found. Set a new password: ";
-    cin >> newpassword;
-    cout << "Confirm the new password: ";
-    cin >> confirmPassword;
-
-    if (newpassword == confirmPassword) {
-        string encryptedPassword = EncryptDecrypt(newpassword, key);
-        ofstream passwordfile("password.txt");
-        if (passwordfile.is_open()) {
-            passwordfile << encryptedPassword;
-            passwordfile.close();
-            cout << "Password set successfully" << endl;
-        } else {
-            cerr << "Error: Failed to open password file for writing" << endl;
-            exit(1);
-        }
-    } else {
-        cerr << "Passwords do not match. Please restart the program and try again." << endl;
-        exit(1);
-    }
 }
 
 
@@ -231,7 +235,7 @@ void DeleteJournal() {
 
                 if (choice == "yes") {
                     while (getline(inputFile, line) && line != "-------------------------------------------------------") {
-                        // Skip journal content to delete
+                    
                     }
                 } else {
                     tempFile << line << endl;
@@ -309,6 +313,7 @@ void ChangePassword(const string& key) {
         cerr << "Incorrect password." << endl;
     }
     cout << "Press enter key to return to Main menu.";
+    cin.ignore();
     getchar();
     cout << endl;
 }
